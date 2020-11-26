@@ -1,3 +1,5 @@
+const mysql = require('../database/mysqlConnector.js')
+
 const getCategory = (request, response) => {
     const json = { nome : 'Macbook'}
     response.json(json)

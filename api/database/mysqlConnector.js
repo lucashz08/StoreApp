@@ -5,7 +5,7 @@ const connection = mysql.createConnection(config.mysql)
 
 module.exports = connection.connect((err) => {
     if(err)
-        console.log('Error to connect '+ err)
-        
-    console.log('MySQL ON : ' + connection.threadId)
+        console.log('MySQL OFF \n'+ err)
+    else    
+        console.log('MySQL ON : ' + connection.threadId)
 })

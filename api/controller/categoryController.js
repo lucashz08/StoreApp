@@ -16,7 +16,7 @@ const getByQuery = (request, response) => {
 }
 
 const post = (request, response) => {
-    response.json({status : 200})
+    response.json(request.body)
 }
 
 module.exports = {get, getById, getByQuery, post}

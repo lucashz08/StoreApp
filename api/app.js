@@ -1,9 +1,12 @@
 const app = require('express')()
+const bodyParser = require('body-parser')
 const config = require('./config/readFile')
 const categoryController = require('./controller/categoryController')
 
 const port = parseInt(process.argv[2]) ||
              parseInt(config.server.port) || 3000
+
+app.use(bodyParser.json())
 
 // Categorias
 // GET

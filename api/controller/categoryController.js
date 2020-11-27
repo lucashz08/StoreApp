@@ -1,22 +1,22 @@
 const mysql = require('../database/mysqlConnector.js')
 
-const getCategory = (request, response) => {
+const get = (request, response) => {
     const json = { nome : 'Macbook'}
     response.json(json)
 }
 
-const getCategoryById = (request, response) => {
+const getById = (request, response) => {
     response.send('teste' + request.params.id)
 }
 
-const getCategoryByQuery = (request, response) => {
+const getByQuery = (request, response) => {
     response.json({
         nome : request.query.nome
     })
 }
 
-const postCategory = (request, response) => {
+const post = (request, response) => {
     response.json({status : 200})
 }
 
-module.exports = {getCategory, getCategoryById, getCategoryByQuery, postCategory}
+module.exports = {get, getById, getByQuery, post}

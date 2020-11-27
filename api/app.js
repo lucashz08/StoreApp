@@ -1,18 +1,18 @@
 const app = require('express')()
 const config = require('./config/readFile')
-const { getCategory, getCategoryById, getCategoryByQuery, postCategory } = require('./controller/categoryController')
+const categoryController = require('./controller/categoryController')
 
 const port = parseInt(process.argv[2]) ||
              parseInt(config.server.port) || 3000
 
 // Categorias
 // GET
-app.get('/category', getCategory)
-app.get('/category/query', getCategoryByQuery)
-app.get('/category/:id', getCategoryById)
+app.get('/category', categoryController.get)
+app.get('/category/query', categoryController.getByQuery)
+app.get('/category/:id', categoryController.getById)
 
 // POST
-app.post('/category', postCategory)
+app.post('/category', categoryController.post)
 
 
 app.listen(port, () => {

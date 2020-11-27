@@ -1,8 +1,17 @@
-const mysql = require('../database/mysql')
+const {conn, connection} = require('../database/mysql')
 
-const get = (request, response) => {
-    const json = { nome : 'Macbook'}
-    response.json(json)
+const get = async (request, response) => {
+    const json = []
+
+   await connection.query("SELECT * FROM category", (error, result) => {
+        if(error) throw error
+        json.push(...JSON.parse(JSON.stringify(result)))
+        console.log(json)
+       
+    })
+
+  response.send(json)
+
 }
 
 const getById = (request, response) => {

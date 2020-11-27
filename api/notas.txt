@@ -1,0 +1,5 @@
+# npm ini para leitura de configurações
+npm install –save ini
+
+#instalar nodemon de forma global
+npm install -g nodemon

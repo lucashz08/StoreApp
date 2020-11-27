@@ -1,6 +1,6 @@
 const app = require('express')()
 const bodyParser = require('body-parser')
-const config = require('./config/readFile')
+const config = require('./config/read')
 const categoryController = require('./controller/category')
 
 const port = parseInt(process.argv[2]) ||

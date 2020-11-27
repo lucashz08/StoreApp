@@ -1,4 +1,4 @@
-const mysql = require('../database/mysqlConnector.js')
+const mysql = require('../database/mysql.js')
 
 const get = (request, response) => {
     const json = { nome : 'Macbook'}

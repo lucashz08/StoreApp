@@ -1,12 +1,14 @@
 const app = require('express')()
 const bodyParser = require('body-parser')
 const config = require('./config/readFile')
-const categoryController = require('./controller/categoryController')
+const categoryController = require('./controller/category')
 
 const port = parseInt(process.argv[2]) ||
              parseInt(config.server.port) || 3000
 
+app.use(bodyParser.text())
 app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended : true}))
 
 // Categorias
 // GET
